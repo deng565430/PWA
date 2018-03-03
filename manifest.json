@@ -1,0 +1,15 @@
+{
+  "name": "app",
+  "short_name": "程序名",
+  "display": "standalone",
+  "start_url": "/",
+  "theme_color": "#fff",
+  "background_color": "#123345",
+  "icons": [
+    {
+      "src": "a.png",
+      "sizes": "123*123",
+      "type": "images/png"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>PWA应用</title>
+  <link rel="manifest" href="./manifest.json">
+  <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+  <header></header>
+  <main>
+    ....
+  </main>
+  <footer>
+    ...
+  </footer>
+  <div>
+    <p>必须全局安装 npm install -g  http-server终端启动http-server服务</p>
+    <img src="./image/timg.jpeg" alt="" width="200px">
+  </div>
+  <script src="./js/index.js"></script>
+  <script src="./js/test.js"></script>
+  <script>
+    if('serviceWorker' in navigator) {
+      // 第一次 null 如果有人 生效了 有值
+      console.log('当前控制权', navigator.serviceWorker.controller);
+      // 注册文件
+      navigator.serviceWorker.register('./sw.js')
+        .then(function (registration) {
+          console.log(`serviceWorker注册成功,范围为 ${registration.scope}`)
+        })
+        .catch(function (err) {
+          console.log(`serviceWorker注册失败,范围为 ${err}`)
+        })
+    }
+  </script>
+</body>
+</html>
