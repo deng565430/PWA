@@ -37,6 +37,10 @@ self.addEventListener('activate', function (e) {
   e.waitUntil(caches.keys().then(function (keyList) {
     return Promise.all(keyList.map(function (key) {
       console.log(`serviceWorker Removing old key `, key)
+      // 把老key里面的数据删除 保持版本的变化
+      if (key !== cacheName) {
+        return caches.delete(key)
+      }
     }))
   }));
 });
